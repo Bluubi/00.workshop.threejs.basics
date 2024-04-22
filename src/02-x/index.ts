@@ -6,24 +6,26 @@ const BOX_WIDTH = 1;
 const BOX_HEIGHT = 1;
 const BOX_DEPTH = 1;
 
-    const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('#webgl')!});
-    const box = createFirstBox();
-    const scene = createSceneAndAddBoxToIt(box);
+const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('#webgl')!});
+const box = createFirstBox();
+const scene = createSceneAndAddBoxToIt(box);
 
-    const perspectiveCamera = createPerspectiveCamera();
-    perspectiveCamera.position.z = 10;
+const perspectiveCamera = createPerspectiveCamera();
+perspectiveCamera.position.z = 10;
 
-    renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(window.innerWidth, window.innerHeight);
 
-    function tick(){
-        box.rotation.x += 1 / 60;
-        box.rotation.y += 1 / 60;
+function tick(){
+    box.rotation.x += 1 / 60;
+    box.rotation.y += 1 / 60;
 
-        requestAnimationFrame(tick);
 
-        renderer.render(scene, perspectiveCamera);
 
-    }
+    requestAnimationFrame(tick);
+
+    renderer.render(scene, perspectiveCamera);
+
+}
 
 function createFirstBox(){
     const boxGeometry = new THREE.BoxGeometry(BOX_WIDTH,BOX_HEIGHT,BOX_DEPTH);
