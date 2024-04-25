@@ -32,6 +32,7 @@ function createFirstBox(){
     });
 
     return new THREE.Mesh(boxGeometry, boxBasicMaterial);
+
 }
 
 function createSceneAndAddBoxToIt(box: Mesh){
